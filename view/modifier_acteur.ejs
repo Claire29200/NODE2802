@@ -1,7 +1,9 @@
+
 <h1>Modifier un acteur</h1>
-<form action="/send" method="post">
-    <input type="text" name="prenom"placeholder="prenom">
-    <input type="text" name="nom"placeholder="nom">
-    <input type="text" name="photo" placeholder="photo">
+<form action="/modifier_acteur" method="post">
+    <input type="text" name="prenom" value="<%= acteurs.prenom%>"></input>
+    <input type="text" name="nom" value="<%= acteurs.nom%>">
+    <input type="text" name="photo"value="<%= acteurs.photo%>">
+    <input type="hidden" name="id" value="<%= acteurs.id%>" >
     <input type="submit" value="modifier">
 </form>

@@ -37,3 +37,24 @@ exports.AddActor = function (POST, cb) {
     }
   );
 };
+exports.DeleteActor = function (POST, cb) {
+   
+  connect.query(
+    "DELETE FROM acteurs  WHERE id = (nom , prenom, photo) VALUES (?,?,?);", [POST.nom, POST.prenom, POST.photo],
+    function (err) {
+      if (err) cb(false);
+      cb(true); // callback est une fonction envoyée en paramètres  à partir de app.js
+    }
+  );
+};
+
+exports.ModifActor = function (POST, cb) {
+   
+  connect.query(
+    "UPDATE acteurs  SET nom = ?, prenom = ?, photo = ? WHERE acteurs.id = ?;", [POST.nom, POST.prenom, POST.photo, POST.id],
+     function (err) {
+       if (err) cb(false);
+       cb(true); // callback est une fonction envoyée en paramètres  à partir de app.js
+     }
+  );
+};

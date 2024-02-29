@@ -1,4 +1,7 @@
 <h1>ACTEUR</h1>
 <h2><%= acteur.prenom %></h2>
 <h2><%= acteur.nom %></h2>
-<img src="<%= acteur.photo %>" alt="">
+<a href=""><img src="<%= acteur.photo %>" alt=""></a>
+<button><a href="/modifier_acteur/<%= acteur.id%>">Modifier un acteur</a></button>
+<button><a href="/delete_acteur">Supprimer un acteur</a></button>
+<p><button> <a href="../acteurs">Retour vers la page des acteurs</a></button></p>
