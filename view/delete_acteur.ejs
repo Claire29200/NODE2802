@@ -1,7 +1,8 @@
 <h1>Supprimer un acteur</h1>
-<form action="/delete_acteur" method="post">
-    <input type="text" name="prenom">
-    <input type="text" name="nom">
-    <input type="text" name="photo">
+<form action="/delete_acteur/" method="post">
+    <input type="text" name="prenom" value="<%= acteurs.prenom%>">
+    <input type="text" name="nom" value="<%= acteurs.nom%>">
+    <input type="text" name="photo" value="<%= acteurs.photo%>">
+    <input type="hidden" name="id" value="<%= acteurs.id%>" >
     <input type="submit" value="supprimer">
 </form>

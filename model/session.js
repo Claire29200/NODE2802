@@ -5,7 +5,7 @@ const session = require('express-session');
 var app = express();
 
 app.use(cookieParser());
-app.use(session({secret: "Shh, its a secret!",cookie: { maxAge: 60000 } })); // backstage c'est la durée de ta session
+app.use(session({secret: "Shh, its a secret!",cookie: { maxAge: 60000 } })); // maxage c'est la durée de ta session
 
 
 app.get('/', function(req, res){
