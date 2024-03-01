@@ -64,6 +64,22 @@ app.post("/modifier_acteur", (req, res) => {
     }
    });
 });
+app.get("/delete_acteur/:id", (req, res) => {
+  bdd.getActeur(req.params.id, function (row) {
+     res.render("delete_acteur", { acteurs: row });
+});
+});
+app.post("/delete_acteur", (req, res) => {
+
+bdd.DeleteActor(req.body, function (r) {
+ if (r) {
+   res.redirect("/acteurs");
+} else {
+  res.send("err");
+}
+});
+});
+
 app.listen(port, () => {
   console.log("listen to port" + port);
 });

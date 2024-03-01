@@ -40,7 +40,7 @@ exports.AddActor = function (POST, cb) {
 exports.DeleteActor = function (POST, cb) {
    
   connect.query(
-    "DELETE FROM acteurs  WHERE id = (nom , prenom, photo) VALUES (?,?,?);", [POST.nom, POST.prenom, POST.photo],
+    "DELETE FROM acteurs  WHERE acteurs.id = ? ;",
     function (err) {
       if (err) cb(false);
       cb(true); // callback est une fonction envoyée en paramètres  à partir de app.js
